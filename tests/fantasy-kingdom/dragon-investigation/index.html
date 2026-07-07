@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="theme-color" content="#1f2b2c">
+  <title>屠龙任务调查版</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="view active intro" id="introView">
+      <div class="hero" aria-labelledby="page-title">
+        <div class="hero-content">
+          <p class="eyebrow">十二道选择 · 调查分支</p>
+          <h1 id="page-title">屠龙任务调查版</h1>
+          <p class="lead">国王要你消灭恶龙，但山谷里的证词、矿场记录和龙的赔偿要求，让任务变得不再简单。</p>
+          <div class="intro-actions">
+            <button class="btn primary" id="startBtn" type="button">开始调查</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view screen" id="quizView">
+      <section class="toolbar topbar" aria-label="答题进度">
+        <div class="progress-wrap">
+          <div class="progress-meta">
+            <span id="progressText">第 1 / 12 题</span>
+            <span id="selectedText">未选择</span>
+          </div>
+          <div class="progress"><span id="progressBar"></span></div>
+        </div>
+      </section>
+
+      <section class="question-stage">
+        <section class="questions" id="questions" aria-label="测试题目"></section>
+      </section>
+
+      <nav class="pager" aria-label="题目翻页">
+        <button class="btn primary next" id="nextBtn" type="button">确认</button>
+      </nav>
+    </section>
+
+    <section class="view screen" id="resultView">
+      <section class="result show" id="result" aria-live="polite">
+        <div class="result-inner">
+          <div class="result-main">
+            <div class="badge" id="resultType">普通结局</div>
+            <h2 id="resultTitle"></h2>
+            <div class="result-text" id="resultText"></div>
+            <div id="hiddenResults"></div>
+            <div class="result-actions">
+              <button class="btn primary" id="againBtn" type="button">重新开始</button>
+            </div>
+          </div>
+          <div class="result-aside">
+            <h2>已发现证据</h2>
+            <div class="score-list" id="evidenceList"></div>
+            <p class="hint">每题最多选择 2 项。隐藏结局会作为额外结果解锁。</p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">请选择 1-2 项</div>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
