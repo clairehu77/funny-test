@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="theme-color" content="#1f2b2c">
+  <title>龙与勇士</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="view home" id="homeView">
+      <div class="home-shell" aria-labelledby="home-title">
+        <header class="home-header">
+          <p class="eyebrow">故事测试实验室</p>
+          <h1 id="home-title">选择一个测试</h1>
+          <p class="lead">每个测试都会把选择藏进故事里。你只要一路点下去，结局会自己露面。</p>
+        </header>
+
+        <section class="test-grid" aria-label="测试题型">
+          <button class="test-card available" id="dragonEntryBtn" type="button">
+            <span class="test-status">可开始</span>
+            <span class="test-title">龙与勇士</span>
+            <span class="test-meta">十二道选择 · 十七种命运</span>
+            <span class="test-copy">国王要你去边境屠龙，但任务书上的字，未必等于真相。</span>
+          </button>
+
+          <button class="test-card" type="button" aria-disabled="true">
+            <span class="test-status">制作中</span>
+            <span class="test-title">宫廷人格测试</span>
+            <span class="test-meta">权谋场景 · 阵营倾向</span>
+            <span class="test-copy">在宴会、密信和王座之间，看你更像顾问、骑士还是幕后推手。</span>
+          </button>
+
+          <button class="test-card" type="button" aria-disabled="true">
+            <span class="test-status">制作中</span>
+            <span class="test-title">魔法职业倾向</span>
+            <span class="test-meta">学院分流 · 技能路线</span>
+            <span class="test-copy">面对失控咒语、禁书和导师偏心，找到你最可能修成的魔法方向。</span>
+          </button>
+
+          <button class="test-card" type="button" aria-disabled="true">
+            <span class="test-status">制作中</span>
+            <span class="test-title">荒岛决策实验</span>
+            <span class="test-meta">生存选择 · 团队角色</span>
+            <span class="test-copy">资源有限、天气变坏、队友意见不一，你会先搭棚还是先定规则。</span>
+          </button>
+
+          <button class="test-card" type="button" aria-disabled="true">
+            <span class="test-status">制作中</span>
+            <span class="test-title">王国阵营测验</span>
+            <span class="test-meta">政治寓言 · 价值排序</span>
+            <span class="test-copy">秩序、自由、财富、传统和真相，总有一个会被你放到最前面。</span>
+          </button>
+        </section>
+      </div>
+    </section>
+
+    <section class="view active intro" id="introView">
+      <div class="hero" aria-labelledby="page-title">
+        <div class="hero-content">
+          <p class="eyebrow">十二道选择 · 十七种命运</p>
+          <h1 id="page-title">龙与勇士</h1>
+          <p class="lead">国王要你去边境，杀掉那条龙，带回龙角。任务书就一行。出发前，你不知道这行字有多少种读法。</p>
+          <div class="intro-actions">
+            <button class="btn primary" id="startBtn" type="button">开始测试</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view screen" id="quizView">
+      <section class="toolbar topbar" aria-label="答题进度">
+        <div class="progress-wrap">
+          <div class="progress-meta">
+            <span id="progressText">第 1 / 12 题</span>
+            <span id="selectedText">未选择</span>
+          </div>
+          <div class="progress"><span id="progressBar"></span></div>
+        </div>
+      </section>
+
+      <section class="question-stage">
+        <section class="questions" id="questions" aria-label="测试题目"></section>
+      </section>
+
+      <nav class="pager" aria-label="题目翻页">
+        <button class="btn primary next" id="nextBtn" type="button">下一题</button>
+      </nav>
+    </section>
+
+    <section class="view screen" id="resultView">
+      <section class="result show" id="result" aria-live="polite">
+        <div class="result-inner">
+          <div class="result-main">
+            <div class="badge" id="resultType">普通结局</div>
+            <h2 id="resultTitle"></h2>
+            <p class="result-tag" id="resultTag"></p>
+            <div class="rarity" aria-label="结局稀有程度">
+              <div class="rarity-top">
+                <span id="rarityLabel">稀有程度</span>
+                <span id="rarityValue">--</span>
+              </div>
+              <div class="rarity-track"><span class="rarity-fill" id="rarityFill"></span></div>
+            </div>
+            <div class="result-text" id="resultText"></div>
+            <div class="epilogue">
+              <h3>后来发生了什么</h3>
+              <p id="epilogueText"></p>
+            </div>
+            <div class="result-actions">
+              <button class="btn primary" id="againBtn" type="button">再测一次</button>
+            </div>
+          </div>
+          <div class="result-aside">
+            <h2>判定依据</h2>
+            <p id="reasonText"></p>
+            <div class="score-list" id="scoreList"></div>
+            <p class="hint">分数只用于判断路线，不代表选项好坏。勇士也可以只是想赶紧下班。</p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">每题最多选 2 个选项</div>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
