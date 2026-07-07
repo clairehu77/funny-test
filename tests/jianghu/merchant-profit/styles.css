@@ -1,19 +1,19 @@
 :root {
   color-scheme: light;
-  --ink: #1c1b18;
-  --muted: #686057;
-  --line: #ddd4c6;
-  --paper: #fffaf1;
-  --panel: #ffffff;
-  --amber: #c96f22;
-  --red: #9e302b;
-  --moss: #4f6f52;
-  --blue: #315f7a;
-  --shadow: 0 18px 50px rgba(42, 31, 20, 0.14);
+  --ink: #241f18;
+  --muted: #716554;
+  --line: #d9c8a8;
+  --paper: #fff8ea;
+  --panel: #fffdf6;
+  --amber: #b98526;
+  --red: #8f2f2a;
+  --moss: #536342;
+  --blue: #5e4a32;
+  --shadow: 0 18px 50px rgba(43, 32, 19, 0.18);
   --page-bg:
-    radial-gradient(circle at 18% 8%, rgba(201, 111, 34, 0.24), transparent 30%),
-    radial-gradient(circle at 82% 12%, rgba(79, 111, 82, 0.2), transparent 32%),
-    linear-gradient(120deg, #8c4a25 0%, #314d52 48%, #1f2b2c 100%);
+    radial-gradient(circle at 18% 8%, rgba(185, 133, 38, 0.26), transparent 30%),
+    radial-gradient(circle at 82% 12%, rgba(143, 47, 42, 0.18), transparent 32%),
+    linear-gradient(120deg, #4d3821 0%, #2f2b24 48%, #1d1b18 100%);
 }
 
 * {
@@ -61,7 +61,7 @@ button {
   background:
     linear-gradient(180deg, rgba(24, 25, 22, 0.08), rgba(24, 25, 22, 0.52));
   box-shadow: var(--shadow);
-  color: #fff7eb;
+  color: #fff8e8;
   display: grid;
   align-items: end;
   padding: 32px;
@@ -717,9 +717,12 @@ h1 {
 }
 
 .question {
-  min-height: 420px;
+  min-height: auto;
   display: grid;
-  align-content: center;
+  align-content: start;
+  background:
+    linear-gradient(90deg, rgba(185, 133, 38, 0.08), transparent 16px),
+    rgba(255, 253, 246, 0.88);
 }
 
 .question-head {
@@ -734,8 +737,9 @@ h1 {
 }
 
 .question-title {
-  font-size: clamp(18px, 3.6vw, 25px);
-  line-height: 1.65;
+  font-size: 15.5px;
+  line-height: 1.76;
+  white-space: pre-line;
 }
 
 .options {
@@ -746,7 +750,8 @@ h1 {
 .option {
   min-height: 58px;
   align-items: center;
-  font-size: 16px;
+  font-size: 15px;
+  background: #fffdf6;
 }
 
 .pager {
@@ -818,6 +823,15 @@ h1 {
   min-height: 48px;
 }
 
+.epilogue p + p {
+  margin-top: 14px;
+}
+
+.rarity-fill,
+.progress span {
+  background: linear-gradient(90deg, #b98526, #8f2f2a);
+}
+
 
 @media (max-width: 840px) {
   .app {
@@ -884,7 +898,7 @@ h1 {
   }
 
   .question {
-    min-height: calc(100svh - 160px);
+    min-height: auto;
   }
 
   .question-head {

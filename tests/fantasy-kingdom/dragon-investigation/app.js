@@ -77,13 +77,7 @@ function render() {
   progressBar.style.width = `${Math.max(0, (q.id - 1) / total * 100)}%`;
   nextBtn.textContent = q.next([]) === "RESULT" ? "查看结局" : "确认";
 
-  const displayLabels = ["A", "B", "C", "D", "E", "F"];
-  const options = Object.entries(q.options).map(([letter, text], index) => `
-    <button class="option" type="button" data-option="${letter}" aria-pressed="false">
-      <span class="letter">${displayLabels[index]}</span>
-      <span>${text}</span>
-    </button>
-  `).join("");
+  const options = QuizCore.optionButtons(q);
 
   questionsEl.innerHTML = `
     <article class="question">

@@ -169,11 +169,15 @@ h1 {
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(69, 52, 34, 0.24);
   border-radius: 8px;
   background: #fffdf8;
   color: var(--ink);
   padding: 10px 14px;
+  text-decoration: none;
   cursor: pointer;
   transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
 }

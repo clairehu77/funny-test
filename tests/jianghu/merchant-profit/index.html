@@ -6,8 +6,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="theme-color" content="#1f2b2c">
-  <title>屠龙任务调查版</title>
+  <meta name="theme-color" content="#2a241d">
+  <title>一本万利</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,11 +15,11 @@
     <section class="view active intro" id="introView">
       <div class="hero" aria-labelledby="page-title">
         <div class="hero-content">
-          <p class="eyebrow">十二道选择 · 调查分支</p>
-          <h1 id="page-title">屠龙任务调查版</h1>
-          <p class="lead">国王要你消灭恶龙，但山谷里的证词、矿场记录和龙的赔偿要求，让任务变得不再简单。</p>
+          <p class="eyebrow">江湖 · 信息差 · 老板人格</p>
+          <h1 id="page-title">一本万利</h1>
+          <p class="lead">鲛人、藏宝阁、合欢宗、五毒教、御兽宗都在找路子。你谁都不是，但谁都找得到你。</p>
           <div class="intro-actions">
-            <button class="btn primary" id="startBtn" type="button">开始调查</button>
+            <button class="btn primary" id="startBtn" type="button">翻开账本</button>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
       <section class="toolbar topbar" aria-label="答题进度">
         <div class="progress-wrap">
           <div class="progress-meta">
-            <span id="progressText">第 1 / 12 题</span>
+            <span id="progressText">第 1 / 32 题</span>
             <span id="selectedText">未选择</span>
           </div>
           <div class="progress"><span id="progressBar"></span></div>
@@ -41,7 +41,7 @@
       </section>
 
       <nav class="pager" aria-label="题目翻页">
-        <button class="btn primary next" id="nextBtn" type="button">确认</button>
+        <button class="btn primary next" id="nextBtn" type="button">下一题</button>
       </nav>
     </section>
 
@@ -51,24 +51,36 @@
           <div class="result-main">
             <div class="badge" id="resultType">普通结局</div>
             <h2 id="resultTitle"></h2>
+            <p class="result-tag" id="resultTag"></p>
+            <div class="rarity" aria-label="结局稀有程度">
+              <div class="rarity-top">
+                <span id="rarityLabel">稀有程度</span>
+                <span id="rarityValue">--</span>
+              </div>
+              <div class="rarity-track"><span class="rarity-fill" id="rarityFill"></span></div>
+            </div>
             <div class="result-text" id="resultText"></div>
-            <div id="hiddenResults"></div>
+            <div class="epilogue">
+              <h3>后来发生了什么</h3>
+              <p id="epilogueText"></p>
+            </div>
             <div class="result-actions">
-              <button class="btn primary" id="againBtn" type="button">重新开始</button>
+              <button class="btn primary" id="againBtn" type="button">再做一单</button>
               <a class="btn" href="../../../index.html">回到首页</a>
             </div>
           </div>
           <div class="result-aside">
-            <h2>已发现证据</h2>
-            <div class="score-list" id="evidenceList"></div>
-            <p class="hint">每题最多选择 2 项。隐藏结局会作为额外结果解锁。</p>
+            <h2>账本倾向</h2>
+            <p id="reasonText"></p>
+            <div class="score-list" id="scoreList"></div>
+            <p class="hint">分数只用于判断路线，不代表经营建议。江湖生意，先活着再发财。</p>
           </div>
         </div>
       </section>
     </section>
   </main>
 
-  <div class="toast" id="toast">请选择 1-2 项</div>
+  <div class="toast" id="toast">本题只能选 1 项</div>
 
   <script src="../../../shared/quiz-core.js"></script>
   <script src="content.js"></script>

@@ -26,24 +26,9 @@ const reasonText = document.getElementById("reasonText");
 const scoreList = document.getElementById("scoreList");
 const toast = document.getElementById("toast");
 
-function shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
 function renderQuestions() {
   const question = questions[state.current];
-  const displayLabels = ['A', 'B', 'C', 'D', 'E', 'F'];
-  const entries = shuffle(Object.entries(question.options));
-  const options = entries.map(([letter, text], idx) => `
-      <button class="option" type="button" data-option="${letter}" aria-pressed="false">
-        <span class="letter">${displayLabels[idx]}</span>
-        <span>${text}</span>
-      </button>
-    `).join('');
+  const options = QuizCore.optionButtons(question);
   questionsEl.innerHTML = `
       <article class="question">
         <div class="question-head">
