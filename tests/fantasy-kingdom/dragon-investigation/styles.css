@@ -713,9 +713,9 @@ h1 {
 }
 
 .question {
-  min-height: 420px;
+  min-height: auto;
   display: grid;
-  align-content: center;
+  align-content: start;
 }
 
 .question-head {
@@ -730,8 +730,8 @@ h1 {
 }
 
 .question-title {
-  font-size: clamp(18px, 3.6vw, 25px);
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.78;
   white-space: pre-line;
 }
 
@@ -743,7 +743,7 @@ h1 {
 .option {
   min-height: 58px;
   align-items: center;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .pager {
@@ -885,7 +885,7 @@ h1 {
   }
 
   .question {
-    min-height: calc(100svh - 160px);
+    min-height: auto;
   }
 
   .question-head {
